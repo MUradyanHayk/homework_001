@@ -46,9 +46,9 @@ fun selectLevel() {
     println("select the level : ( 1- Easy, 2- Medium, 3- Hard)")
     while (true) {
         try {
-            val l = readLine()
-            if (l != null) {
-                step = when (l.toInt()) {
+            val level = readLine()
+            if (level != null) {
+                step = when (level.toInt()) {
                     1 -> {
                         println("You have 7 steps")
                         7
