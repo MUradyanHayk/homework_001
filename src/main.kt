@@ -10,8 +10,10 @@ fun main(args: Array<String>) {
 }
 
 fun play() {
-    selectLevel()
-    enterNumber()
+    while (true) {
+        selectLevel()
+        enterNumber()
+    }
 }
 
 fun enterNumber() {
@@ -30,7 +32,7 @@ fun enterNumber() {
                     n.toInt() > number -> println("take lowe")
                     n.toInt() < number -> println("take higher")
                     else -> {
-                        println(" you won")
+                        println(" you won !!!")
                         return
                     }
                 }
@@ -40,6 +42,7 @@ fun enterNumber() {
         }
         i++
     }
+    println("\nYou lose\n")
 }
 
 fun selectLevel() {
