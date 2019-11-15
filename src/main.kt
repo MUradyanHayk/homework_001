@@ -4,47 +4,47 @@ import kotlin.Exception
 const val LEFT_BOUND = 1
 const val RIGHT_BOUND = 100
 var step: Int = 0
-var win: Boolean = false
 
 fun main(args: Array<String>) {
     play()
 }
 
 fun play() {
-    while (!win) {
-        selectLevel()
-        enterNumber()
-    }
+    selectLevel()
+    enterNumber()
 }
 
 fun enterNumber() {
-    println("to enter a number between 1 and 100")
+    while (true) {
 
-    val number = generateNumber()
-    var i = 0
-    while (i < step) {
-        val n = readLine()
-        try {
-            if (n != null) {
-                if (n.toInt() < RIGHT_BOUND || n.toInt() > LEFT_BOUND) {
-                    throw Exception()
-                }
-                when {
-                    n.toInt() > number -> println("take lowe")
-                    n.toInt() < number -> println("take higher")
-                    else -> {
-                        println(" you won !!!")
-                        win = true
-                        return
+        println("to enter a number between 1 and 100")
+        val number = generateNumber()
+
+        var i = 0
+        while (i < step) {
+            val n = readLine()
+            try {
+                if (n != null) {
+                    if (n.toInt() < LEFT_BOUND || n.toInt() > RIGHT_BOUND) {
+                        throw Exception()
+                    }
+                    when {
+                        n.toInt() > number -> println("take lowe")
+                        n.toInt() < number -> println("take higher")
+                        else -> {
+                            println(" you won !!!")
+                            return
+                        }
                     }
                 }
+            } catch (e: Exception) {
+                println("the number must be between 1 and 100, please enter again")
+                continue
             }
-        } catch (e: Exception) {
-            println("the number must be between 1 and 100, please enter again")
+            i++
         }
-        i++
+        println("\nYou lose\n")
     }
-    println("\nYou lose\n")
 }
 
 fun selectLevel() {
