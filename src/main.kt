@@ -26,7 +26,7 @@ fun enterNumber() {
         val n = readLine()
         try {
             if (n != null) {
-                if (n.toInt() < 1 || n.toInt() > 100) {
+                if (n.toInt() < RIGHT_BOUND || n.toInt() > LEFT_BOUND) {
                     throw Exception()
                 }
                 when {
