@@ -10,3 +10,5 @@ after choosing a level, the game should
 3. if the number is lower than generated number, user should see the message “take higher”
 4. if the number is correct, show you won message, and finish the game
 5. if the user exceed the limit of steps, he should see the restart message, and game should be started again, from step 1.
+###
+Notes: all the input data should be verified
