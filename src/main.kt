@@ -34,6 +34,7 @@ fun enterNumber() {
                     n.toInt() < number -> println("take higher")
                     else -> {
                         println(" you won !!!")
+                        win = true
                         return
                     }
                 }
@@ -44,7 +45,6 @@ fun enterNumber() {
         i++
     }
     println("\nYou lose\n")
-    win = true
 }
 
 fun selectLevel() {
