@@ -4,13 +4,14 @@ import kotlin.Exception
 const val LEFT_BOUND = 1
 const val RIGHT_BOUND = 100
 var step: Int = 0
+var win: Boolean = false
 
 fun main(args: Array<String>) {
     play()
 }
 
 fun play() {
-    while (true) {
+    while (!win) {
         selectLevel()
         enterNumber()
     }
@@ -43,6 +44,7 @@ fun enterNumber() {
         i++
     }
     println("\nYou lose\n")
+    win = true
 }
 
 fun selectLevel() {
